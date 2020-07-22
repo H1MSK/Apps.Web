@@ -79,7 +79,7 @@ $(document).ready(function () {
             return GBK.encode(str);
         };
         GBKEncoder.prototype.decode = function (arr) {
-            throw GBK.decode(arr);
+            return GBK.decode(arr);
         };
         return GBKEncoder;
     }(Encoder));
@@ -171,7 +171,12 @@ $(document).ready(function () {
                 }
                 num_array.push.apply(num_array, result);
             }
-            original = encoder.decode(num_array);
+            try {
+                original = encoder.decode(num_array);
+            }
+            catch (URIError) {
+                original = default_error_message + "(可能是编码错了切噜？)";
+            }
         } while (0);
         $("#text-original").val(original);
     });
