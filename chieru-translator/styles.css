@@ -46,18 +46,21 @@ body {
     background: #FFF;
     margin: 4px;
     border-radius: 8px;
+    border: #888 solid 1px;
 }
 
 #info {
     max-height: 0;
     overflow: hidden;
     background: #FFF;
+    margin: 4px;
     border-radius: 8px;
     transition: max-height 0.2s;
 }
 
 #info.display-info{
     max-height: 300px;
+    border: #888 solid 1px;
 }
 
 #info p {
@@ -157,6 +160,7 @@ flex-direction: row;
 .dropdown-select {
     margin-bottom: 0;
     transition: border-radius 0.1s;
+    border: #888 solid 1px;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -202,6 +206,7 @@ flex-direction: row;
 
 .dropdown-menu-show .dropdown-select {
     border-radius: 8px 8px 0 0;
+    border-bottom: transparent solid 0px;
 }
 
 .dropdown-menu-show .dropdown-menu {
@@ -220,6 +225,15 @@ flex-direction: row;
     text-decoration:none;
     margin: 0;
     padding: 0 4px 0 4px;
+    border: #888 solid 1px;
+    border-bottom: transparent solid 0px;
+    border-top: transparent solid 0px;
+}
+
+.dropdown-item:last-child {
+    border-radius: 0 0 8px 8px;
+    border: #888 solid 1px;
+    border-top: transparent solid 0px;
 }
 /** Element Display End **/
 
@@ -230,6 +244,7 @@ flex-direction: row;
     padding: 4px;
     outline: 0px solid transparent;
     cursor:text;
+    font-size: 18px;
 }
 /** Text Area End  **/
 
@@ -244,6 +259,7 @@ flex-direction: row;
     align-items: center;
     border-radius: 8px;
     margin: 4px;
+    border: #888 solid 1px;
 }
 
 .button-group {
@@ -253,14 +269,19 @@ flex-direction: row;
 .button-group .button {
     border-radius: 0;
     margin: 0;
+    border-top: transparent solid 0px;
+    border-bottom: transparent solid 0px;
 }
 
 .button-group .button:first-child {
     border-radius: 8px 8px 0 0;
+    border-top: #888 solid 1px;
+
 }
 
 .button-group .button:last-child {
     border-radius: 0 0 8px 8px;
+    border-bottom: #888 solid 1px;
 }
 
 .mobile .button-group .button:first-child {

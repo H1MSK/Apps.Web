@@ -99,7 +99,7 @@ $(document).ready(function () {
         // if (typeof chieru !== 'string') return;
         if (chieru.length < 3 || !(chieru.length & 1) || chieru[0] != "切")
             return;
-        for (var i = 0; i < chieru.length; i += 2) {
+        for (var i = 1; i < chieru.length; i += 2) {
             var code = [chieru_charactors.indexOf(chieru[i]), chieru_charactors.indexOf(chieru[i + 1])];
             if (code[0] == -1 || code[1] == -1)
                 return;
@@ -149,15 +149,27 @@ $(document).ready(function () {
             for (; i < translated.length; ++i) {
                 if (symbols.indexOf(translated[i]) != -1) {
                     if (s != i) {
-                        num_array.push.apply(num_array, chieru2NumArray(translated.slice(s, i)));
+                        var result = chieru2NumArray(translated.slice(s, i));
+                        if (typeof result == 'undefined') {
+                            original = default_error_message;
+                            break;
+                        }
+                        num_array.push.apply(num_array, result);
                         s = i;
                     }
                     ++s;
                     num_array.push.apply(num_array, encoder.encode(translated[i]));
                 }
             }
+            if (original.length != 0)
+                break;
             if (s != translated.length) {
-                num_array.push.apply(num_array, chieru2NumArray(translated.slice(s, i)));
+                var result = chieru2NumArray(translated.slice(s, i));
+                if (typeof result == 'undefined') {
+                    original = default_error_message;
+                    break;
+                }
+                num_array.push.apply(num_array, result);
             }
             original = encoder.decode(num_array);
         } while (0);
