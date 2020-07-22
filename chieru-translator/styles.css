@@ -400,3 +400,33 @@ flex-direction: row;
 }
 
 /** Color End **/
+
+/** Mobile Font Begin **/
+.mobile #banner {
+    font-size: 72px;
+}
+.mobile #info {
+    font-size: 48px;
+}
+
+.mobile #info.display-info {
+    max-height: 800px;
+}
+
+.mobile .dropdown {
+    font-size: 40px;
+}
+.mobile .dropdown-menu-show .dropdown-menu {
+    max-height:120px;
+}
+
+.mobile .textarea {
+    font-size: 40px;
+}
+
+.mobile .button {
+    font-size: 80px;
+    min-height: 120px;
+    min-width: 120px;
+}
+/** Mobile Font End **/
