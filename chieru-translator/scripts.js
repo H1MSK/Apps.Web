@@ -33,6 +33,10 @@ $(document).ready(function () {
     $("#info").toggleClass("display-info");
   });
 
+  $("#info").click(function() {
+    $("#info").toggleClass("display-info");
+  });
+
   $(".dropdown-select").click(function () {
     console.assert(
       $(this).parent().hasClass("dropdown"),
