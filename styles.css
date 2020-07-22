@@ -1,0 +1,381 @@
+/** Font Begin **/
+@font-face {
+    font-family: FGG;
+    src: url("./fonts/FeiGunGun.ttf")
+}
+
+* {
+    font-family: FGG;
+}
+/** Font End **/
+
+/** Background Begin **/
+body {
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.85;
+}
+/** Background End **/
+
+/** Panel Layout Begin **/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#banner {
+    font-size: 32px;
+    text-align: center;
+    background: #FFF;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+#info {
+    max-height: 0;
+    overflow: hidden;
+    background: #FFF;
+    border-radius: 8px;
+    transition: max-height 0.2s;
+}
+
+#info.display-info{
+    max-height: 300px;
+}
+
+#info p {
+    opacity: 0;
+    transition: 0s;
+}
+
+#info.display-info p {
+    opacity: 1;
+    padding-left: 20px;
+    transition: 0.2s;
+}
+
+#info.display-info p:nth-child(1) { transition-delay: 0.05s; }
+#info.display-info p:nth-child(2) { transition-delay: 0.1s; }
+#info.display-info p:nth-child(3) { transition-delay: 0.15s; }
+#info.display-info p:nth-child(4) { transition-delay: 0.2s; }
+
+#info p { transition-delay: 0.2s; }
+
+#container {
+    flex-grow: 1;
+}
+/** Panel Layout End **/
+
+/** Container Layout Begin **/
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+#div-origin, #div-translated {
+    flex-grow: 1;
+}
+
+#div-buttons {
+    flex-grow: 0;
+}
+
+.mobile #container {
+    flex-direction: column;
+}
+
+#div-origin, #div-translated {
+    flex-grow: 1;
+}
+
+#div-buttons {
+    flex-grow: 0;
+}
+/** Container Layout End **/
+
+/** Sub Div Layout Begin **/
+#div-origin, #div-translated {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.dropdown {
+    flex-grow: 0;
+}
+
+.textarea {
+    flex-grow: 1;
+}
+/** Origin Div Flex Layout End **/
+
+/** Button Group Flex Layout Begin **/
+.button-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile .button-group {
+flex-direction: row;
+}
+
+.button-group .button {
+    flex-grow: 1;
+}
+/** Button Group Flex Layout End **/
+
+/** Dropdown Begin **/
+.dropdown-menu, .dropdown-select {
+    margin: 5px;
+    padding: 4px;
+    border-radius: 8px;
+    border-width: 1px;
+}
+
+.dropdown {
+    cursor: default;
+    margin: 0;
+}
+
+.dropdown-select {
+    margin-bottom: 0;
+    transition: border-radius 0.1s;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropdown-select::after {
+    content: '';
+    text-align: right;
+    float:right;
+    transition: transform 0.1s;
+    margin: 5px;
+    width: 5px;
+    height: 5px;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    transform: rotate(225deg);
+}
+
+.dropdown-menu-show .dropdown-select::after {
+    transform: rotate(135deg);
+}
+
+.dropdown-menu {
+    float: left;
+    max-height: 0;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 0;
+    overflow: overlay;
+    transition: 0.1s;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropdown-menu-show .dropdown-select {
+    border-radius: 8px 8px 0 0;
+}
+
+.dropdown-menu-show .dropdown-menu {
+    border-radius: 0 0 8px 8px;
+    max-height: 80px;
+    margin: 0 5px 5px 5px;
+    overflow: hidden;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    text-decoration:none;
+    margin: 0;
+    padding: 0 4px 0 4px;
+}
+/** Element Display End **/
+
+/** Text Area Begin  **/
+.textarea {
+    border-radius: 8px;
+    margin: 5px;
+    padding: 4px;
+    outline: 0px solid transparent;
+    cursor:text;
+}
+/** Text Area End  **/
+
+/** Button Begin **/
+.button {
+    min-height: 50px;
+    min-width: 100px;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 4px;
+}
+
+.button-group {
+    margin: 4px;
+}
+
+.button-group .button {
+    border-radius: 0;
+    margin: 0;
+}
+
+.button-group .button:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.button-group .button:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.mobile .button-group .button:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.mobile .button-group .button:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+/** Button End **/
+
+/** Button Text Begin **/
+#button-to-chieru span::before{
+    content: '→';
+}
+
+.mobile #button-to-chieru span::before{
+    content: '↓';
+}
+
+#button-from-chieru span::before{
+    content: '←';
+}
+
+.mobile #button-from-chieru span::before{
+    content: '↑';
+}
+/** Button Text End **/
+
+/** Color Begin **/
+
+* {
+    transition: background 0.2s;
+}
+
+.dropdown-select {
+    background: #B0BFE2;
+}
+
+.dropdown-select:hover {
+    background: #D2DCF2
+}
+
+.dropdown-select:active {
+    background: #8DA0CC
+}
+
+.dropdown-item:nth-child(odd) {
+    background: #FFC0C0;
+}
+
+.dropdown-item:nth-child(odd):hover {
+    background: #FFD9D9;
+}
+
+.dropdown-item:nth-child(odd):active {
+    background: #FFA6A6;
+}
+
+.dropdown-item:nth-child(even) {
+    background: #FFFFC0;
+}
+
+.dropdown-item:nth-child(even):hover {
+    background: #FFFFD9
+}
+
+.dropdown-item:nth-child(even):active {
+    background: #FFFF8B;
+}
+
+.dropdown-item {
+    color: #000
+}
+
+.textarea {
+    background: #FFD9D9
+}
+
+.textarea:focus {
+    background: #FFF0F0
+}
+
+.textarea:empty:before{
+    color: #808080;
+    content:attr(data-text)
+}
+
+.button-group .button:nth-child(odd) {
+
+}
+
+.button-group .button:nth-child(odd) {
+    background: #FFFFC0;
+}
+
+.button-group .button:nth-child(odd):hover {
+    background: #FFFFD9
+}
+
+.button-group .button:nth-child(odd):active {
+    background: #FFFF8B;
+}
+
+.button-group .button:nth-child(even) {
+    background: #B0BFE2;
+}
+
+.button-group .button:nth-child(even):hover {
+    background: #D2DCF2
+}
+
+.button-group .button:nth-child(even):active {
+    background: #8DA0CC
+}
+
+/** Color End **/

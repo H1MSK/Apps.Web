@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>切噜语翻译姬</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script src="./gbk.js"></script>
+    <script src="./scripts.js"></script>
+    <script src="./chieru.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./imgs/chierui0.ico" />
+    <link rel="apple-touch-icon" type="image/png" href="./imgs/chierui0.ico" />
+  </head>
+  <body>
+    <div id="panel">
+      <div id="banner" class="banner">切噜语翻译姬 切噜~♪</div>
+      <div id="info" class="info">
+        <p>切噜语翻译姬能够把一切语言翻译成切噜语 （￣▽￣）" </p>
+        <p>只需要把原文放到左边就好了切噜~ Easy []~（￣▽￣）~* </p>
+        <p>当然想要把切噜语翻译回去，人家也是可以办得到的切噜 （•̀ ω •́ ）✧ </p>
+        <p>不要调戏人家哦 ˋ（° ▽、° ） </p>
+      </div>
+      <div id="container">
+        <div id="div-origin" class="dropdown">
+          <div id="select-encode" class="dropdown-select">UTF8</div>
+          <div id="dropdown-encode" class="dropdown-menu">
+            <a class="dropdown-item" href="#">UTF8</a>
+            <a class="dropdown-item" href="#">GBK</a>
+          </div>
+          <textarea
+            id="text-original"
+            class="textarea"
+            placeholder="原文在这里切噜~"
+          ></textarea>
+        </div>
+
+        <div id="div-buttons" class="button-group">
+          <class id="button-to-chieru" class="button">
+            <span></span>
+          </class>
+          <class id="button-from-chieru" class="button">
+            <span></span>
+          </class>
+        </div>
+
+        <div id="div-translated">
+          <textarea
+            id="text-translated"
+            class="textarea"
+            placeholder="切噜噜噜~"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
