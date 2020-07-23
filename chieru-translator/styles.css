@@ -47,14 +47,23 @@ body {
     margin: 4px;
     border-radius: 8px;
     border: #888 solid 1px;
+    height: 1.4em;
+    overflow: hidden;
 }
 
-#banner:after {
-    float: right;
-    margin: 0.3em;
+#banner:before {
+    position: absolute;
+    top: 2.7em;
+    right: 0.5em;
     content: "by H1MSK";
     font-size: 0.4em;
     color: rgba(0,0,0,0.3);
+}
+
+#banner:after {
+    content: " 切噜~♪";
+    white-space:nowrap;;
+    overflow: hidden;
 }
 
 #info {
@@ -443,16 +452,8 @@ flex-direction: row;
     min-width: 2em;
 }
 
-@media screen and (max-width:600px) {
-    body {
-		font-size: 24px !important;
-	}
-}
-
-@media screen and (min-width: 601px) {
-    body {
-		font-size: 20px !important;
-	}
+body {
+    font-size: 15px !important;
 }
 
 /** Font Size End **/
