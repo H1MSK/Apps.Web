@@ -15,12 +15,12 @@ $(document).ready(function () {
 
     do {
       if (window.innerWidth < window.innerHeight) {
-        if (!forced && body.hasClass("mobile")) break;
-        body.addClass("mobile");
+        if (!forced && body.hasClass("vertical-layout")) break;
+        body.addClass("vertical-layout");
         body.css("background-image", "url(" + s_vertical_background_url + ")");
       } else {
-        if (!forced && !body.hasClass("mobile")) break;
-        body.removeClass("mobile");
+        if (!forced && !body.hasClass("vertical-layout")) break;
+        body.removeClass("vertical-layout");
         body.css(
           "background-image",
           "url(" + s_horizontal_background_url + ")"

@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>切噜语翻译姬 | H1's Apps</title>
     <script src="./jquery-3.5.1.min.js"></script>
     <script src="./gbk.js"></script>
@@ -21,11 +22,13 @@
         <p>不要调戏人家哦 ˋ（° ▽、° ） </p>
       </div>
       <div id="container">
-        <div id="div-origin" class="dropdown">
-          <div id="select-encode" class="dropdown-select">UTF8</div>
-          <div id="dropdown-encode" class="dropdown-menu">
-            <a class="dropdown-item" href="#">UTF8</a>
-            <a class="dropdown-item" href="#">GBK</a>
+        <div id="div-origin">
+          <div class="dropdown">
+            <div id="select-encode" class="dropdown-select">UTF8</div>
+            <div id="dropdown-encode" class="dropdown-menu">
+              <a class="dropdown-item" href="#">UTF8</a>
+              <a class="dropdown-item" href="#">GBK</a>
+            </div>
           </div>
           <textarea
             id="text-original"
