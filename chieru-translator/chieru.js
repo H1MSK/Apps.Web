@@ -86,6 +86,7 @@ $(document).ready(function () {
     var chieru_charactors = "切卟叮咧哔唎啪啰啵嘭噜噼巴拉蹦铃".split('');
     var symbols = "\n\t\r\b 　~`!@#$%^&*()_+-=[]\\{}|;':\",./<>?！￥…（）—【】、；：‘’“”《》，。？～｀＃＄％＾＆＊－＿＝＋［］｛｝＼｜＇＂＜＞／";
     var default_error_message = "啥？ 你突然说什么啊……不敢相信，太差劲了……";
+    var default_error_word = [123, 69, 82, 82, 79, 82, 125];
     function numArray2chieru(arr) {
         var word = "切";
         for (var i = 0, len = arr.length; i < len; ++i) {
@@ -98,11 +99,11 @@ $(document).ready(function () {
         var arr = [];
         // if (typeof chieru !== 'string') return;
         if (chieru.length < 3 || !(chieru.length & 1) || chieru[0] != "切")
-            return;
+            return default_error_word;
         for (var i = 1; i < chieru.length; i += 2) {
             var code = [chieru_charactors.indexOf(chieru[i]), chieru_charactors.indexOf(chieru[i + 1])];
             if (code[0] == -1 || code[1] == -1)
-                return;
+                return default_error_word;
             arr.push(code[0] | (code[1] << 4));
         }
         return arr;
