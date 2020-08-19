@@ -12,14 +12,23 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Mini Dungeon WebGL.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body>
+  <body style="background: #3f3f3f">
     <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
+      <div id="unityContainer" style="width: 100%; height: 90%"></div>
+      <div id="footer" class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">Mini Dungeon</div>
       </div>
     </div>
+    <script>
+      function changeContainerHeight() {
+        var c = document.getElementById("unityContainer");
+        var f = document.getElementById("footer");
+        c.style.height = (window.innerHeight - f.clientHeight - 10) + "px";
+      }
+      window.onresize = changeContainerHeight;
+      changeContainerHeight();
+    </script>
   </body>
 </html>
